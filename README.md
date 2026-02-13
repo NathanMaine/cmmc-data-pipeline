@@ -17,13 +17,14 @@ Built for the [CMMC Compliance AI Model](https://github.com/NathanMaine/cmmc-com
 
 ## Sources
 
-| Source | Records | What It Provides |
-|--------|---------|------------------|
-| NIST SP 800-53 Rev. 5 | 1,016 | Security and privacy controls (OSCAL JSON) |
-| DoD Documents | 606 | CMMC assessment guides, scoping guides, policy PDFs |
-| NIST CSF 2.0 | 208 | Cybersecurity Framework categories and subcategories |
-| NIST SP 800-171 Rev. 3 | 97 | CUI protection controls (OSCAL JSON) |
-| eCFR | 413 (75 after filter) | 32 CFR 170 (CMMC), 45 CFR 164 (HIPAA), 48 CFR 252 (DFARS) |
+| Source | Raw Records | After Filter | What It Provides |
+|--------|-------------|--------------|------------------|
+| Federal Register | 2,098 | 350 | CMMC rulemakings, DFARS notices, CUI policy documents |
+| NIST SP 800-53 Rev. 5 | 1,016 | 773 | Security and privacy controls (OSCAL JSON) |
+| DoD Documents | 606 | 519 | CMMC assessment guides, scoping guides, policy PDFs |
+| eCFR | 413 | 75 | 32 CFR 170 (CMMC), 45 CFR 164 (HIPAA), DFARS cyber clauses |
+| NIST CSF 2.0 | 208 | 61 | Cybersecurity Framework 2.0 categories and subcategories |
+| NIST SP 800-171 Rev. 3 | 97 | 63 | CUI protection controls with assessment objectives (OSCAL JSON) |
 
 ## Setup
 
@@ -134,7 +135,9 @@ data/                  Raw + versioned data (gitignored)
 
 ## Results
 
-**v004** (current): 1,841 unique records from 5 sources, merged with 16,906 existing v1.0 records for **18,747 total training examples**.
+**v004** (current): 1,841 unique records from 6 sources, merged with 16,906 existing v1.0 records for **18,747 total training examples** (14,906 train + 3,841 validation).
+
+This data was used to train [CMMC Expert v2.0](https://huggingface.co/Nathan-Maine/cmmc-expert-7b-v2.0) — a suite of 4 fine-tuned models (7B, 14B, 32B, 72B) for compliance question answering.
 
 ## License
 
